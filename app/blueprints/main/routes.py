@@ -14,3 +14,7 @@ def about():
 @app.route('/contact')
 def contact():
     return render_template('main/contact.html')
+
+@app.route('/register')
+def register():
+    return render_template('main/register.html')
