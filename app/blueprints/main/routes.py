@@ -5,9 +5,11 @@ def home():
     # raise Exception("This is a general exception")
     return render_template('main/home.html')
 
+
 @app.route('/about')
 def about():
     return render_template('main/about.html')
+
 
 @app.route('/contact')
 def contact():
