@@ -1,8 +1,10 @@
 # MVC: Models, views, and controllers
 
+import werkzeug
 import uuid
 from datetime import datetime as dt
 from app import db
+from werkzeug.security import generate_password_hash, check_password_hash
 
 
 class User(db.Model):
@@ -13,6 +15,12 @@ class User(db.Model):
     email = db.Column(db.String(50), unique=True)
     password = db.Column(db.String(300))
     date_created = db.Column(db.DateTime, default=dt.utcnow)
+
+    def generate_password(self, password_from_form):
+        self.password = generate_password_hash(password_from_form)
+
+    def check_password(self):
+        return check_password_hash(self.password, password_from_form)
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)

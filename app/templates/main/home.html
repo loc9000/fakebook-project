@@ -2,18 +2,23 @@
 
 {% block content %}
 
+<h2>
+    Welcome
+</h2>
+<hr>
+
 <div class="row">
     <div class="col-12">
-        <form>
+        <form method="POST">
             <div class="row">
                 <div class="col-10">
                     <div class="form-group">
                         <input type="text" class="form-control" name="blog_post" id="blog_post"
-                            aria-describedby="helpId" placeholder="What's up?">
+                            aria-describedby="helpId" placeholder="What's on your mind?">
                     </div>
                 </div>
                 <div class="col-2">
-                    <button class="btn btn-info btn-block" type="button">
+                    <button class="btn btn-info btn-block" type="submit">
                         Post
                     </button>
                 </div>

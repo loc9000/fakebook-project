@@ -2,12 +2,15 @@
 
 {% block content %}
 
-<div class="row py-4">
+<h2>Register</h2>
+<hr>
+
+<!-- <div class="row py-4">
     <div class="col-3">
         <img class="img-fluid" src="https://via.placeholder.com/1000x1000text=Profile Pic" alt="Profile Pic">
     </div>
-    <div class="col-9">
-        <form>
+    <div class="col-9"> -->
+        <form method="POST" action="{{ url_for('register') }}">
             <div class="form-group">
                 <div class="row">
                     <div class="col-6">
@@ -32,7 +35,7 @@
                 <input type="password" class="form-control" name="confirm_password" id="confirm_password"
                     aria-describedby="helpId" placeholder="Confirm Password">
             </div>
-            <input type="button" class="btn btn-info btn-block" value="Sign Up">
+            <input type="submit" class="btn btn-info btn-block" value="Sign Up">
         </form>
     </div>
 </div>
