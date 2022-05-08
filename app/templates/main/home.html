@@ -3,7 +3,11 @@
 {% block content %}
 
 <h2>
-    Welcome
+    {% if current_user.is_authenticated %}
+        Hello, {{ current_user.first_name }} {{ current_user.last_name  }}
+    {% else %}
+        Welcome
+    {% endif %}
 </h2>
 <hr>
 

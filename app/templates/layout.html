@@ -27,20 +27,25 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ url_for('home') }}">Home </a>
                     </li>
+                    {% if current_user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
                     </li>
+                    {% endif %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
+                    {% if not current_user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('login') }}">Login</a>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                    {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('contact') }}">Logout</a>
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

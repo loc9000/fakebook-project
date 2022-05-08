@@ -1,11 +1,11 @@
 # MVC: Models, views, and controllers
 
-import werkzeug
 import uuid
 from datetime import datetime as dt
-from app import db, login
+from app import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from app import login
 
 
 
@@ -29,8 +29,7 @@ class User(db.Model, UserMixin):
         self.id = uuid.uuid4().hex
 
     def __repr__(self):
-        return f'<User: {self.first_name} {self.last_name}>'
-
+        return f'<User: {self.email}>'
 
 @login.user_loader
 def load_user(user_id):
