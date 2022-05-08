@@ -12,9 +12,9 @@ def home():
     return render_template('main/home.html')
 
 
-@app.route('/about')
-def about():
-    return render_template('main/about.html')
+@app.route('/profile')
+def profile():
+    return render_template('main/profile.html')
 
 
 @app.route('/contact')
